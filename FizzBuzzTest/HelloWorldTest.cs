@@ -18,5 +18,17 @@ namespace FizzBuzzTest
             //Then
             Assert.Equal("1", actual);
         }
+
+        [Fact]
+        public void Get_3_Return_Fizz_Test()
+        {
+            //Given
+            var dependency = new Dependency();
+            string actual = string.Empty;
+            //When
+            actual = dependency.Say(3);
+            //Then
+            Assert.Equal("Fizz", actual);
+        }
     }
 }

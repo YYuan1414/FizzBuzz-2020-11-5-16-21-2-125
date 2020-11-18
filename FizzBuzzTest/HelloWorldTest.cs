@@ -1,3 +1,4 @@
+using Castle.DynamicProxy.Generators;
 using FizzBuzz;
 using Moq;
 using Xunit;
@@ -7,32 +8,15 @@ namespace FizzBuzzTest
     public class HelloWorldTest
     {
         [Fact]
-        public void Hello_world_test()
+        public void Get_1_Return_1_Test()
         {
-            //given
-            Dependency dependency = new Dependency();
-            HelloWorld helloWorld = new HelloWorld(dependency);
-
-            //when
-            string actual = helloWorld.BeenCalled();
-
-            //then
-            Assert.Equal("Leave me alone.", actual);
-        }
-
-        [Fact]
-        public void Should_be_mocked()
-        {
-            //given
-            var mockDependencu = new Mock<Dependency>();
-            mockDependencu.Setup(m => m.Say()).Returns("Hello World");
-            HelloWorld helloWorld = new HelloWorld(mockDependencu.Object);
-
-            //when
-            string actual = helloWorld.BeenCalled();
-
-            //then
-            Assert.Equal("Hello World", actual);
+            //Given
+            var dependency = new Dependency();
+            string actual = string.Empty;
+            //When
+            actual = dependency.Say(1);
+            //Then
+            Assert.Equal("1", actual);
         }
     }
 }

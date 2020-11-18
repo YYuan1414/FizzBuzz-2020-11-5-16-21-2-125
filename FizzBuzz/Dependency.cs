@@ -4,9 +4,9 @@ namespace FizzBuzz
 {
     public class Dependency
     {
-        public virtual string Say()
+        public virtual string Say(int count)
         {
-            return "Leave me alone.";
+            return "1";
         }
     }
 }

@@ -11,7 +11,7 @@ namespace FizzBuzz
                 return "Fizz";
             }
 
-            return "1";
+            return count.ToString();
         }
     }
 }
